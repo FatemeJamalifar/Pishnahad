@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #'django_render_partial',
+
+    ####Our application
+    'Blog',
 ]
 
 MIDDLEWARE = [

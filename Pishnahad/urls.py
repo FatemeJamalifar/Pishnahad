@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path , include
 
 from Pishnahad import settings
 
@@ -24,6 +24,7 @@ from .views import home_page
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home_page),
+    path('blog/',include("Blog.urls"))
 ]
 
 if settings.DEBUG:
