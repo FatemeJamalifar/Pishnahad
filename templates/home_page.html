@@ -2,164 +2,164 @@
 {% load static %}
 
 {% block content %}
-	<div class="body-inner">
+    <div class="body-inner">
 
 
+        <div class="gap-40"></div>
 
-		<div class="gap-40"></div>
+        <section class="featured-post-area no-padding">
+            <div class="container">
+                <div class="row">
 
-		<section class="featured-post-area no-padding">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-12 col-xs-12 pad-r">
-						<div id="featured-slider" class="owl-carousel owl-theme featured-slider">
+                    <div class="col-md-12 col-xs-12 pad-r">
+                        <div id="featured-slider" class="owl-carousel owl-theme featured-slider">
 
                             {% for post in posts %}
-							<div class="item">
-								<img src='{{ post.image.url }}' alt="">
-								<div class="featured-post">
-									<div class="post-content">
-										<a class="post-cat" href="#">{{ post.category.title }}</a>
-										<h2 class="post-title title-extra-large">
-											<a href="#">{{ post.title }}</a>
-										</h2>
-										<span class="post-date">{{ post.created }}</span>
-									</div>
-								</div><!--/ Featured post end -->
-							</div><!-- Item 1 end -->
+                                <div class="item">
+                                    <img src='{{ post.image.url }}' alt="">
+                                    <div class="featured-post">
+                                        <div class="post-content">
+                                            <a class="post-cat" href="#">{{ post.category.title }}</a>
+                                            <h2 class="post-title title-extra-large">
+                                                <a href="#">{{ post.title }}</a>
+                                            </h2>
+                                            <span class="post-date">{{ post.created }}</span>
+                                        </div>
+                                    </div><!--/ Featured post end -->
+                                </div><!-- Item 1 end -->
                             {% endfor %}
 
 
-
-						</div><!-- Featured owl carousel end-->
-					</div><!-- Col 7 end -->
-
+                        </div><!-- Featured owl carousel end-->
+                    </div><!-- Col 7 end -->
 
 
-				</div><!-- Row end -->
-			</div><!-- Container end -->
-		</section><!-- Trending post end -->
+                </div><!-- Row end -->
+            </div><!-- Container end -->
+        </section><!-- Trending post end -->
 
-		<section class="block-wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="block-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-						<div class="latest-news block color-red">
-							<h3 class="block-title"><span>جدیدترین خبر ها</span></h3>
+                        <div class="latest-news block color-red">
+                            <h3 class="block-title"><span>جدیدترین خبر ها</span></h3>
 
-							<div id="latest-news-slide" class="owl-carousel owl-theme latest-news-slide">
-								{% for latest in three_new_post %}
+                            <div id="latest-news-slide" class="owl-carousel owl-theme latest-news-slide">
+                                {% for latest in three_new_post %}
                                     <div class="item">
 
-									<ul class="list-post">
-										<li class="clearfix">
-											<div class="post-block-style clearfix">
-												<div class="post-thumb">
-													<a href="#"><img class="img-responsive" src="{{ latest.image.url }}" alt=""></a>
-												</div>
-												<a class="post-cat" href="#">{{ latest.category.title }}</a>
-												<div class="post-content">
-													<h2 class="post-title title-medium">
-														<a href="{{ latest.get_absolute_url }}">{{ latest.title }}</a>
-													</h2>
-													<div class="post-meta">
-														<span class="post-author"><a href="#">{{ latest.auth.first_name}} {{ latest.auth.last_name}}</a></span>
-														<span class="post-date"> {{ latest.created }} </span>
-													</div>
-												</div><!-- Post content end -->
-											</div><!-- Post Block style end -->
-										</li><!-- Li end -->
-									</ul><!-- List post 1 end -->
-								</div><!-- Item 1 end -->
+                                        <ul class="list-post">
+                                            <li class="clearfix">
+                                                <div class="post-block-style clearfix">
+                                                    <div class="post-thumb">
+                                                        <a href="#"><img class="img-responsive"
+                                                                         src="{{ latest.image.url }}" alt=""></a>
+                                                    </div>
+                                                    <a class="post-cat" href="#">{{ latest.category.title }}</a>
+                                                    <div class="post-content">
+                                                        <h2 class="post-title title-medium">
+                                                            <a href="{{ latest.get_absolute_url }}">{{ latest.title }}</a>
+                                                        </h2>
+                                                        <div class="post-meta">
+                                                            <span class="post-author"><a
+                                                                    href="#">{{ latest.auth.first_name }} {{ latest.auth.last_name }}</a></span>
+                                                            <span class="post-date"> {{ latest.created }} </span>
+                                                        </div>
+                                                    </div><!-- Post content end -->
+                                                </div><!-- Post Block style end -->
+                                            </li><!-- Li end -->
+                                        </ul><!-- List post 1 end -->
+                                    </div><!-- Item 1 end -->
                                 {% endfor %}
-							</div><!-- Latest News owl carousel end-->
-						</div><!--- Latest news end -->
+                            </div><!-- Latest News owl carousel end-->
+                        </div><!--- Latest news end -->
 
                         {% for cat,post in post_order_by_cats.items %}
                             <div class="gap-50"></div>
                             <div class="latest-news block color-dark-blue">
-							<h3 class="block-title"><span>{{ cat.title }}</span></h3>
+                                <h3 class="block-title"><span>{{ cat.title }}</span></h3>
 
-							<div id="latest-news-slide" class="owl-carousel owl-theme latest-news-slide">
-								{% for item in post %}
-                                <div class="item">
+                                <div id="latest-news-slide" class="owl-carousel owl-theme latest-news-slide">
+                                    {% for item in post %}
+                                        <div class="item">
 
-									<ul class="list-post">
-										<li class="clearfix">
-											<div class="post-block-style clearfix">
-												<div class="post-thumb">
-													<a href="#"><img class="img-responsive" src="{{ item.image.url }}" alt=""></a>
-												</div>
-												<a class="post-cat" href="#">{{ item.category.title }}</a>
-												<div class="post-content">
-													<h2 class="post-title title-medium">
-														<a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
-													</h2>
-													<div class="post-meta">
-														<span class="post-author"><a href="#">{{ item.auth.first_name }} {{ item.auth.last_name }}</a></span>
-														<span class="post-date">{{ item.created }}</span>
-													</div>
-												</div><!-- Post content end -->
-											</div><!-- Post Block style end -->
-										</li><!-- Li end -->
-									</ul><!-- List post 1 end -->
-								</div><!-- Item 1 end -->
-                                {% endfor %}
+                                            <ul class="list-post">
+                                                <li class="clearfix">
+                                                    <div class="post-block-style clearfix">
+                                                        <div class="post-thumb">
+                                                            <a href="#"><img class="img-responsive"
+                                                                             src="{{ item.image.url }}" alt=""></a>
+                                                        </div>
+                                                        <a class="post-cat" href="#">{{ item.category.title }}</a>
+                                                        <div class="post-content">
+                                                            <h2 class="post-title title-medium">
+                                                                <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+                                                            </h2>
+                                                            <div class="post-meta">
+                                                                <span class="post-author"><a
+                                                                        href="#">{{ item.auth.first_name }} {{ item.auth.last_name }}</a></span>
+                                                                <span class="post-date">{{ item.created }}</span>
+                                                            </div>
+                                                        </div><!-- Post content end -->
+                                                    </div><!-- Post Block style end -->
+                                                </li><!-- Li end -->
+                                            </ul><!-- List post 1 end -->
+                                        </div><!-- Item 1 end -->
+                                    {% endfor %}
 
-							</div><!-- owl carousel end-->
-						</div>
+                                </div><!-- owl carousel end-->
+                            </div>
                         {% endfor %}
 
 
 
 
-						<div class="gap-50"></div>
+                        <div class="gap-50"></div>
 
-						<!--- Featured Tab startet -->
+                        <!--- Featured Tab startet -->
 
-						<div class="gap-40"></div>
-
-
+                        <div class="gap-40"></div>
 
 
-					</div><!-- Content Col end -->
+                    </div><!-- Content Col end -->
 
 
+                </div><!-- Row end -->
+            </div><!-- Container end -->
+        </section><!-- First block end -->
 
-				</div><!-- Row end -->
-			</div><!-- Container end -->
-		</section><!-- First block end -->
+        <section class="block-wrapper p-bottom-0">
+            <div class="container">
+                <div class="row">
 
-		<section class="block-wrapper p-bottom-0">
-			<div class="container">
-				<div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar sidebar-right">
+                            <div class="widget m-bottom-0">
+                                <h3 class="block-title"><span>خبرنامه</span></h3>
+                                <div class="ts-newsletter">
+                                    <div class="newsletter-introtext">
+                                        <h4>به روز باشید</h4>
+                                        <p>با عضویت در خبرنامه جدیدترین اخبار را در ایمیل خود دریافت کنید!</p>
+                                    </div>
 
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="sidebar sidebar-right">
-							<div class="widget m-bottom-0">
-								<h3 class="block-title"><span>خبرنامه</span></h3>
-								<div class="ts-newsletter">
-									<div class="newsletter-introtext">
-										<h4>به روز باشید</h4>
-										<p>با عضویت در خبرنامه جدیدترین اخبار را در ایمیل خود دریافت کنید!</p>
-									</div>
-
-									<div class="newsletter-form">
-										<form action="#" method="post">
-											<div class="form-group">
-												<input type="email" name="email" id="newsletter-form-email" class="form-control form-control-lg" placeholder="ایمیل" autocomplete="off">
-												<button class="btn btn-primary">عضویت</button>
-											</div>
-										</form>
-									</div>
-								</div><!-- Newsletter end -->
-							</div><!-- Newsletter widget end -->
-						</div><!--Sidebar right end -->
-					</div><!-- Sidebar col end -->
-				</div><!-- Row end -->
-			</div><!-- Container end -->
-		</section><!-- 3rd block end -->
+                                    <div class="newsletter-form">
+                                        <form action="#" method="post">
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="newsletter-form-email"
+                                                       class="form-control form-control-lg" placeholder="ایمیل"
+                                                       autocomplete="off">
+                                                <button class="btn btn-primary">عضویت</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div><!-- Newsletter end -->
+                            </div><!-- Newsletter widget end -->
+                        </div><!--Sidebar right end -->
+                    </div><!-- Sidebar col end -->
+                </div><!-- Row end -->
+            </div><!-- Container end -->
+        </section><!-- 3rd block end -->
     </div><!-- Body inner end -->
 {% endblock %}

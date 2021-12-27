@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('Blog', '0002_remove_post_time_remove_post_category_post_category'),
     ]
@@ -19,7 +18,8 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=200)),
                 ('image', models.ImageField(null=True, upload_to=Blog.models.upload_image_path)),
                 ('url_price', models.URLField()),
-                ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='modules', to='Blog.post')),
+                ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='modules',
+                                           to='Blog.post')),
             ],
         ),
     ]

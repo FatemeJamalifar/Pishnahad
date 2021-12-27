@@ -16,11 +16,9 @@ def upload_image_path(instance, filename):
     return f'Posts/{instance.title}/{final_name}'
 
 
-
 class Category(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True, allow_unicode=True)
-
 
     def get_absolute_url(self):
         return f"/category/{self.id}/{self.slug}"
@@ -28,25 +26,27 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+
 class PostManager(models.Manager):
     def get_active_post(self):
         return self.get_queryset().filter(active=True)
 
-    def get_post_by_id(self,post_id):
+    def get_post_by_id(self, post_id):
         return self.get_queryset().filter(id=post_id)
 
     def search(self, query):
         lookup = Q(title__icontains=query) | Q(overview__icontains=query) | Q(category__title__icontains=query)
         return self.get_queryset().filter(lookup, active=True, ).distinct()
 
+
 class Post(models.Model):
-    auth = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+    auth = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to=upload_image_path, null=True)
     slug = models.SlugField(max_length=200, unique=True, allow_unicode=True)
     overview = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     active = models.BooleanField(default=False, null=True)
 
     objects = PostManager()
@@ -66,4 +66,3 @@ class PostModule(models.Model):
     advantages = models.TextField(null=True)
     disadvantages = models.TextField(null=True)
     info = models.TextField(null=True)
-

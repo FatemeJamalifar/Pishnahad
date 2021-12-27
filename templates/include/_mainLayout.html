@@ -4,28 +4,28 @@
 <html lang="fa">
 <head>
 
-	<!-- Basic Page Needs
+    <!-- Basic Page Needs
 ================================================== -->
-	<meta charset="utf-8">
-	<title>{% block title %}Title{% endblock %}</title>
+    <meta charset="utf-8">
+    <title>{% block title %}Title{% endblock %}</title>
 
-	<!-- Mobile Specific Metas
-================================================== -->
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
-	<!--Favicon-->
-	<link rel="shortcut icon" href='{% static "images/favicon.ico" %}' type="image/x-icon">
-	<link rel="icon" href='{% static "images/favicon.ico"%}' type="image/x-icon">
-
-	<!-- CSS
+    <!-- Mobile Specific Metas
 ================================================== -->
 
-	{% include "include/_headerRefrences.html" %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-	<!--[if lt IE 9]>
+    <!--Favicon-->
+    <link rel="shortcut icon" href='{% static "images/favicon.ico" %}' type="image/x-icon">
+    <link rel="icon" href='{% static "images/favicon.ico" %}' type="image/x-icon">
+
+    <!-- CSS
+================================================== -->
+
+    {% include "include/_headerRefrences.html" %}
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
 <script src='{% static "js/html5shiv.js"%}'></script>
 <script src='{% static "js/respond.min.js"%}'></script>
 <![endif]-->
@@ -35,200 +35,205 @@
 <body>
 
 
-		<div id="top-bar" class="top-bar">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-sm-8 col-xs-12">
-						<div class="ts-date">
-							<i class="fa fa-calendar-check-o"></i>{% now "Y/m/d" %}
-						</div>
-						<ul class="unstyled top-nav">
-							<li><a href="#">درباره ما</a></li>
-							<li><a href="#">برای ما بنویسید</a></li>
-							<li><a href="#">تبلیغات</a></li>
-							<li><a href="#">تماس</a></li>
-						</ul>
-					</div><!--/ Top bar left end -->
+<div id="top-bar" class="top-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="ts-date">
+                    <i class="fa fa-calendar-check-o"></i>{% now "Y/m/d" %}
+                </div>
+                <ul class="unstyled top-nav">
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">برای ما بنویسید</a></li>
+                    <li><a href="#">تبلیغات</a></li>
+                    <li><a href="#">تماس</a></li>
+                </ul>
+            </div><!--/ Top bar left end -->
 
-					<div class="col-md-4 col-sm-4 col-xs-12 top-social text-right">
-						<ul class="unstyled">
-							<li>
-								<a title="Facebook" href="#">
-									<span class="social-icon"><i class="fa fa-facebook"></i></span>
-								</a>
-								<a title="Twitter" href="#">
-									<span class="social-icon"><i class="fa fa-twitter"></i></span>
-								</a>
-								<a title="Google+" href="#">
-									<span class="social-icon"><i class="fa fa-google-plus"></i></span>
-								</a>
-								<a title="Linkdin" href="#">
-									<span class="social-icon"><i class="fa fa-linkedin"></i></span>
-								</a>
-								<a title="Rss" href="#">
-									<span class="social-icon"><i class="fa fa-rss"></i></span>
-								</a>
-								<a title="Skype" href="#">
-									<span class="social-icon"><i class="fa fa-skype"></i></span>
-								</a>
-							</li>
-						</ul><!-- Ul end -->
-					</div><!--/ Top social col end -->
-				</div><!--/ Content row end -->
-			</div><!--/ Container end -->
-		</div><!--/ Topbar end -->
+            <div class="col-md-4 col-sm-4 col-xs-12 top-social text-right">
+                <ul class="unstyled">
+                    <li>
+                        <a title="Facebook" href="#">
+                            <span class="social-icon"><i class="fa fa-facebook"></i></span>
+                        </a>
+                        <a title="Twitter" href="#">
+                            <span class="social-icon"><i class="fa fa-twitter"></i></span>
+                        </a>
+                        <a title="Google+" href="#">
+                            <span class="social-icon"><i class="fa fa-google-plus"></i></span>
+                        </a>
+                        <a title="Linkdin" href="#">
+                            <span class="social-icon"><i class="fa fa-linkedin"></i></span>
+                        </a>
+                        <a title="Rss" href="#">
+                            <span class="social-icon"><i class="fa fa-rss"></i></span>
+                        </a>
+                        <a title="Skype" href="#">
+                            <span class="social-icon"><i class="fa fa-skype"></i></span>
+                        </a>
+                    </li>
+                </ul><!-- Ul end -->
+            </div><!--/ Top social col end -->
+        </div><!--/ Content row end -->
+    </div><!--/ Container end -->
+</div><!--/ Topbar end -->
 
-		<!-- Header start -->
-		<header id="header" class="header">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-5 col-md-5">
-						<div class="logo">
-							<a href='/'>
-								<img src='{% static "images/logos/logo.png"%}' style="width: 300px;" alt="">
-							</a>
-						</div>
-					</div><!-- logo col end -->
+<!-- Header start -->
+<header id="header" class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-5 col-md-5">
+                <div class="logo">
+                    <a href='/'>
+                        <img src='{% static "images/logos/logo.png" %}' style="width: 300px;" alt="">
+                    </a>
+                </div>
+            </div><!-- logo col end -->
 
 
-				</div><!-- Row end -->
-			</div><!-- Logo and banner area end -->
-		</header><!--/ Header end -->
+        </div><!-- Row end -->
+    </div><!-- Logo and banner area end -->
+</header><!--/ Header end -->
 
-		<div class="main-nav clearfix">
-			<div class="container">
-				<div class="row">
-					<nav class="site-navigation navigation">
-						<div class="site-nav-inner pull-left">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">تغییر وضعیت ناوبری</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
+<div class="main-nav clearfix">
+    <div class="container">
+        <div class="row">
+            <nav class="site-navigation navigation">
+                <div class="site-nav-inner pull-left">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">تغییر وضعیت ناوبری</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-							<div class="collapse navbar-collapse navbar-responsive-collapse">
-								<ul class="nav navbar-nav">
-									<li {% if request.path == '/' %} class="active" {% endif %}>
-                                        <a href="/" class="" >خانه </a>
-									</li>
-                                    <li {% if request.path == '/blog/' %} class="active" {% endif %}>
-                                        <a href="/blog" class="" >بلاگ </a>
-									</li>
-								</ul><!--/ Nav ul end -->
-							</div><!--/ Collapse end -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav">
+                            <li {% if request.path == '/' %} class="active" {% endif %}>
+                                <a href="/" class="">خانه </a>
+                            </li>
+                            <li {% if request.path == '/blog/' %} class="active" {% endif %}>
+                                <a href="/blog" class="">بلاگ </a>
+                            </li>
+                        </ul><!--/ Nav ul end -->
+                    </div><!--/ Collapse end -->
 
-						</div><!-- Site Navbar inner end -->
-					</nav><!--/ Navigation end -->
+                </div><!-- Site Navbar inner end -->
+            </nav><!--/ Navigation end -->
 
-					<div class="nav-search">
-						<span id="search"><i class="fa fa-search"></i></span>
-					</div><!-- Search end -->
+            <div class="nav-search">
+                <span id="search"><i class="fa fa-search"></i></span>
+            </div><!-- Search end -->
 
-                    <form action="/search">
-					<div class="search-block" style="display: none;">
-						<input type="text" class="form-control" placeholder="عبارت را وارد نموده و اینتر بزنید" value="{{ request.GET.q }}" name="q">
-						<span class="search-close">×</span>
-					</div><!-- Site search end -->
-                    </form>
+            <form action="/search">
+                <div class="search-block" style="display: none;">
+                    <input type="text" class="form-control" placeholder="عبارت را وارد نموده و اینتر بزنید"
+                           value="{{ request.GET.q }}" name="q">
+                    <span class="search-close">×</span>
+                </div><!-- Site search end -->
+            </form>
 
-				</div><!--/ Row end -->
-			</div><!--/ Container end -->
+        </div><!--/ Row end -->
+    </div><!--/ Container end -->
 
-		</div><!-- Menu wrapper end -->
+</div><!-- Menu wrapper end -->
 
 {% block content %}
-content
+    content
 {% endblock %}
 
-		<footer id="footer" class="footer">
-			<div class="footer-info text-center">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="footer-info-content">
-								<div class="footer-logo">
-									<img class="img-responsive" src='{% static "images/logos/footer-logo.png"%}' alt="">
-								</div>
-								<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی</p>
-								<p class="footer-info-phone"><i class="fa fa-phone"></i> <span class="ltr_text">+(785) 238-4131</span></p>
-								<p class="footer-info-email"><i class="fa fa-envelope-o"></i> <span class="ltr_text">info@example.com</span></p>
-								<ul class="unstyled footer-social">
-									<li>
-										<a title="Rss" href="#">
-											<span class="social-icon"><i class="fa fa-rss"></i></span>
-										</a>
-										<a title="Facebook" href="#">
-											<span class="social-icon"><i class="fa fa-facebook"></i></span>
-										</a>
-										<a title="Twitter" href="#">
-											<span class="social-icon"><i class="fa fa-twitter"></i></span>
-										</a>
-										<a title="Google+" href="#">
-											<span class="social-icon"><i class="fa fa-google-plus"></i></span>
-										</a>
-										<a title="Linkdin" href="#">
-											<span class="social-icon"><i class="fa fa-linkedin"></i></span>
-										</a>
-										<a title="Skype" href="#">
-											<span class="social-icon"><i class="fa fa-skype"></i></span>
-										</a>
-										<a title="Skype" href="#">
-											<span class="social-icon"><i class="fa fa-dribbble"></i></span>
-										</a>
-										<a title="Skype" href="#">
-											<span class="social-icon"><i class="fa fa-pinterest"></i></span>
-										</a>
-										<a title="Skype" href="#">
-											<span class="social-icon"><i class="fa fa-instagram"></i></span>
-										</a>
-									</li>
-								</ul>
-							</div><!-- Footer info content end -->
-						</div><!-- Col end -->
-					</div><!-- Row end -->
-				</div><!-- Container end -->
-			</div><!-- Footer info end -->
+<footer id="footer" class="footer">
+    <div class="footer-info text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-info-content">
+                        <div class="footer-logo">
+                            <img class="img-responsive" src='{% static "images/logos/footer-logo.png" %}' alt="">
+                        </div>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                            تکنولوژی</p>
+                        <p class="footer-info-phone"><i class="fa fa-phone"></i> <span
+                                class="ltr_text">+(785) 238-4131</span></p>
+                        <p class="footer-info-email"><i class="fa fa-envelope-o"></i> <span class="ltr_text">info@example.com</span>
+                        </p>
+                        <ul class="unstyled footer-social">
+                            <li>
+                                <a title="Rss" href="#">
+                                    <span class="social-icon"><i class="fa fa-rss"></i></span>
+                                </a>
+                                <a title="Facebook" href="#">
+                                    <span class="social-icon"><i class="fa fa-facebook"></i></span>
+                                </a>
+                                <a title="Twitter" href="#">
+                                    <span class="social-icon"><i class="fa fa-twitter"></i></span>
+                                </a>
+                                <a title="Google+" href="#">
+                                    <span class="social-icon"><i class="fa fa-google-plus"></i></span>
+                                </a>
+                                <a title="Linkdin" href="#">
+                                    <span class="social-icon"><i class="fa fa-linkedin"></i></span>
+                                </a>
+                                <a title="Skype" href="#">
+                                    <span class="social-icon"><i class="fa fa-skype"></i></span>
+                                </a>
+                                <a title="Skype" href="#">
+                                    <span class="social-icon"><i class="fa fa-dribbble"></i></span>
+                                </a>
+                                <a title="Skype" href="#">
+                                    <span class="social-icon"><i class="fa fa-pinterest"></i></span>
+                                </a>
+                                <a title="Skype" href="#">
+                                    <span class="social-icon"><i class="fa fa-instagram"></i></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!-- Footer info content end -->
+                </div><!-- Col end -->
+            </div><!-- Row end -->
+        </div><!-- Container end -->
+    </div><!-- Footer info end -->
 
-		</footer><!-- Footer end -->
+</footer><!-- Footer end -->
 
-		<div class="copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-6">
-						<div class="copyright-info">
-							<span>تمامی حقوق برای این وب سایت محفوظ است</span>
-						</div>
-					</div>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="copyright-info">
+                    <span>تمامی حقوق برای این وب سایت محفوظ است</span>
+                </div>
+            </div>
 
-					<div class="col-xs-12 col-sm-6">
-						<div class="footer-menu">
-							<ul class="nav unstyled">
-								<li><a href="#">قوانین سایت</a></li>
-								<li><a href="#">حریم شخصی</a></li>
-								<li><a href="#">تبلیغات</a></li>
-								<li><a href="#">قوانین کوکی ها</a></li>
-								<li><a href="#">تماس با ما</a></li>
-							</ul>
-						</div>
-					</div>
-				</div><!-- Row end -->
+            <div class="col-xs-12 col-sm-6">
+                <div class="footer-menu">
+                    <ul class="nav unstyled">
+                        <li><a href="#">قوانین سایت</a></li>
+                        <li><a href="#">حریم شخصی</a></li>
+                        <li><a href="#">تبلیغات</a></li>
+                        <li><a href="#">قوانین کوکی ها</a></li>
+                        <li><a href="#">تماس با ما</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- Row end -->
 
-				<div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
-					<button class="btn btn-primary" title="Back to Top">
-						<i class="fa fa-angle-up"></i>
-					</button>
-				</div>
+        <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
+            <button class="btn btn-primary" title="Back to Top">
+                <i class="fa fa-angle-up"></i>
+            </button>
+        </div>
 
-			</div><!-- Container end -->
-		</div><!-- Copyright end -->
+    </div><!-- Container end -->
+</div><!-- Copyright end -->
 
 
-		<!-- Javascript Files
+<!-- Javascript Files
 ================================================== -->
 
-		{% include 'include/_footerRefrences.html' %}
+{% include 'include/_footerRefrences.html' %}
 
-	</div><!-- Body inner end -->
+</div><!-- Body inner end -->
 </body>
 </html>

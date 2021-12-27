@@ -2,123 +2,123 @@
 {% load static %}
 
 {% block content %}
-	    <section class="block-wrapper no-sidebar">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <section class="block-wrapper no-sidebar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-						<div class="single-post">
+                    <div class="single-post">
 
-							<div class="post-title-area">
-								<a class="post-cat" href="#">{{ post_details.category.title }}</a>
-								<h2 class="post-title">
-                                    {{ post_details.title }}
-								</h2>
-								<div class="post-meta">
+                        <div class="post-title-area">
+                            <a class="post-cat" href="#">{{ post_details.category.title }}</a>
+                            <h2 class="post-title">
+                                {{ post_details.title }}
+                            </h2>
+                            <div class="post-meta">
 									<span class="post-author">
-										نویسنده:  <a href="#">{{ post_details.auth.first_name }} {{ post_details.auth.last_name }}</a>
+										نویسنده:  <a
+                                            href="#">{{ post_details.auth.first_name }} {{ post_details.auth.last_name }}</a>
 									</span>
-									<span class="post-date"><i class="fa fa-clock-o"></i> {{ post_details.created }}</span>
+                                <span class="post-date"><i class="fa fa-clock-o"></i> {{ post_details.created }}</span>
 
-								</div>
-							</div><!-- Post title end -->
+                            </div>
+                        </div><!-- Post title end -->
 
-							<div class="post-content-area">
-								<div class="post-media post-featured-image">
-									<img src='{{ post_details.image.url }}' class="img-responsive" alt="">
-								</div>
-								<div class="entry-content">
-                                    <p>{{ post_details.overview }}</p>
-                                </div><!-- Entery content end -->
+                        <div class="post-content-area">
+                            <div class="post-media post-featured-image">
+                                <img src='{{ post_details.image.url }}' class="img-responsive" alt="">
+                            </div>
+                            <div class="entry-content">
+                                <p>{{ post_details.overview }}</p>
+                            </div><!-- Entery content end -->
 
-                                    {% for offer in offers %}
+                            {% for offer in offers %}
 
-                                            <div class="col-md-12 col-sm-12">
-                                                <div class="thumbnail">
-                                                  <img src="{{ offer.image.url }}" alt="">
-                                                  <div class="caption">
-                                                    <h3>{{ offer.title }}</h3>
-                                                    <a href="{{ offer.url_price }}" class="btn btn-primary" role="button"> مشاهده ی قیمت در دیجیکالا</a>
-                                                  </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-sm-12 col-md-12">
-                                                    <div class="thumbnail alert-info">
-                                                        <h2>مشخصات</h2>
-                                                        <p>{{ offer.info|linebreaks }}</p>
-
-                                                    </div>
-                                            </div>
-
-                                            <div class="col-sm-12 col-md-12">
-                                                <div class="thumbnail alert-success">
-                                                    <h2>مزایا</h2>
-                                                    <p>{{ offer.advantages|linebreaks }}</p>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-12 col-md-12">
-                                                <div class="thumbnail alert-danger">
-                                                    <h2>معایت</h2>
-                                                    <p>{{ offer.disadvantages|linebreaks }}</p>
-
-                                                </div>
-                                            </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="thumbnail">
+                                        <img src="{{ offer.image.url }}" alt="">
+                                        <div class="caption">
+                                            <h3>{{ offer.title }}</h3>
+                                            <a href="{{ offer.url_price }}" class="btn btn-primary" role="button">
+                                                مشاهده ی قیمت در دیجیکالا</a>
+                                        </div>
+                                    </div>
+                                </div>
 
 
+                                <div class="col-sm-12 col-md-12">
+                                    <div class="thumbnail alert-info">
+                                        <h2>مشخصات</h2>
+                                        <p>{{ offer.info|linebreaks }}</p>
 
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-12">
+                                    <div class="thumbnail alert-success">
+                                        <h2>مزایا</h2>
+                                        <p>{{ offer.advantages|linebreaks }}</p>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-12">
+                                    <div class="thumbnail alert-danger">
+                                        <h2>معایت</h2>
+                                        <p>{{ offer.disadvantages|linebreaks }}</p>
+
+                                    </div>
+                                </div>
 
 
 
-                                    {% endfor %}
-
-
-                                <div class="entry-content">
-                                    <p>{{ post_details.overview }}</p>
-                                </div><!-- Entery content end -->
-								<div class="tags-area clearfix">
-									<div class="post-tags">
-										<span>برچسب ها:</span>
-										<a href="#"># غذا</a>
-										<a href="#"># سبک زندگی</a>
-										<a href="#"># مسافرت</a>
-									</div>
-								</div><!-- Tags end -->
 
 
 
-							</div><!-- post-content end -->
-						</div><!-- Single post end -->
+                            {% endfor %}
 
 
-
-						<div class="author-box">
-							<div class="author-img pull-left">
-								<img src='{% static "images/news/author.png"%}' alt="">
-							</div>
-							<div class="author-info">
-								<h3>{{ post_details.auth.first_name }} {{ post_details.auth.last_name }}</h3>
-								<p class="author-url"><a href="#">لورم ایپسوم متن ساختگی با تولید</a></p>
-								<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط</p>
-								<div class="authors-social">
-									<span>مرا دنبال کنید: </span>
-									<a href="#"><i class="fa fa-behance"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-google-plus"></i></a>
-									<a href="#"><i class="fa fa-pinterest-p"></i></a>
-								</div>
-							</div>
-						</div> <!-- Author box end -->
+                            <div class="entry-content">
+                                <p>{{ post_details.overview }}</p>
+                            </div><!-- Entery content end -->
+                            <div class="tags-area clearfix">
+                                <div class="post-tags">
+                                    <span>برچسب ها:</span>
+                                    <a href="#"># غذا</a>
+                                    <a href="#"># سبک زندگی</a>
+                                    <a href="#"># مسافرت</a>
+                                </div>
+                            </div><!-- Tags end -->
 
 
+                        </div><!-- post-content end -->
+                    </div><!-- Single post end -->
 
-					</div><!-- Content Col end -->
 
-				</div><!-- Row end -->
-			</div><!-- Container end -->
-		</section><!-- First block end -->
+                    <div class="author-box">
+                        <div class="author-img pull-left">
+                            <img src='{% static "images/news/author.png" %}' alt="">
+                        </div>
+                        <div class="author-info">
+                            <h3>{{ post_details.auth.first_name }} {{ post_details.auth.last_name }}</h3>
+                            <p class="author-url"><a href="#">لورم ایپسوم متن ساختگی با تولید</a></p>
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
+                                است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط</p>
+                            <div class="authors-social">
+                                <span>مرا دنبال کنید: </span>
+                                <a href="#"><i class="fa fa-behance"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                    </div> <!-- Author box end -->
+
+
+                </div><!-- Content Col end -->
+
+            </div><!-- Row end -->
+        </div><!-- Container end -->
+    </section><!-- First block end -->
 {% endblock %}

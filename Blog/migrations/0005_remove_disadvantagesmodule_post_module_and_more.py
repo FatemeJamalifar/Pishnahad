@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('Blog', '0004_rename_module_postmodule_disadvantagesmodule_and_more'),
     ]

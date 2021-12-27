@@ -2,103 +2,107 @@
 {% load static %}
 
 {% block content %}
-		<section class="block-wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <section class="block-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-						<div class="block category-listing">
-							<h3 class="block-title"><span>پست ها</span></h3>
+                    <div class="block category-listing">
+                        <h3 class="block-title"><span>پست ها</span></h3>
 
-							<div class="row">
+                        <div class="row">
 
 
-                                {% for post in page_obj %}
+                            {% for post in page_obj %}
 
-								<div class="col-md-6 col-sm-6">
-									<div class="post-block-style post-grid clearfix">
-										<div class="post-thumb">
-											<a href="{{ post.get_absolute_url }}">
-												<img class="img-responsive" src="{{ post.image.url }}" alt="">
-											</a>
-										</div>
-										<a class="post-cat" href="{{ post.category.get_absolute_url }}">{{ post.category.title }}</a>
-										<div class="post-content">
-											<h2 class="post-title title-large">
-												<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-											</h2>
-											<div class="post-meta">
-												<span class="post-author"><a href="#">{{ post.auth.first_name }} {{ post.auth.last_name }}</a></span>
-												<span class="post-date">{{ post.created }}</span>
-											</div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="post-block-style post-grid clearfix">
+                                        <div class="post-thumb">
+                                            <a href="{{ post.get_absolute_url }}">
+                                                <img class="img-responsive" src="{{ post.image.url }}" alt="">
+                                            </a>
+                                        </div>
+                                        <a class="post-cat"
+                                           href="{{ post.category.get_absolute_url }}">{{ post.category.title }}</a>
+                                        <div class="post-content">
+                                            <h2 class="post-title title-large">
+                                                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                            </h2>
+                                            <div class="post-meta">
+                                                <span class="post-author"><a
+                                                        href="#">{{ post.auth.first_name }} {{ post.auth.last_name }}</a></span>
+                                                <span class="post-date">{{ post.created }}</span>
+                                            </div>
                                             <p>{{ post.overview|truncatewords:"30" }}</p>
-										</div><!-- Post content end -->
-									</div><!-- Post Block style end -->
-								</div><!-- Col 1 end -->
+                                        </div><!-- Post content end -->
+                                    </div><!-- Post Block style end -->
+                                </div><!-- Col 1 end -->
 
-                                {% endfor %}
-
-
+                            {% endfor %}
 
 
-							</div><!-- Row end -->
-						</div><!-- Block Lifestyle end -->
+                        </div><!-- Row end -->
+                    </div><!-- Block Lifestyle end -->
 
-						<div class="paging">
-							<ul class="pagination">
-                                {% if page_obj.has_previous %}
-                                    <li><a href="?page={{ page_obj.pervious_page_number }}">قبلی <i class="fa fa-angle-right"></i></a></li>
+                    <div class="paging">
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.pervious_page_number }}">قبلی <i
+                                        class="fa fa-angle-right"></i></a></li>
+                            {% endif %}
+                            {% for page in paginator.page_range %}
+                                {% if page == page_obj.number %}
+                                    <li class="active"><a href="?page={{ page }}">{{ page }}</a></li>
+
+                                {% else %}
+
+                                    <li><a href="?page={{ page }}">{{ page }}</a></li>
+
                                 {% endif %}
-                                {% for page in paginator.page_range %}
-                                    {% if page == page_obj.number %}
-                                                <li class="active"><a href="?page={{ page }}">{{ page }}</a></li>
+                            {% endfor %}
 
-                                            {% else %}
-
-                                                <li><a href="?page={{ page }}">{{ page }}</a></li>
-
-                                            {% endif %}
-                                {% endfor %}
-
-                                {% if page_obj.has_next %}
-                                    <li><a href="?page={{ page_obj.next_page_number }}">بعدی <i class="fa fa-angle-left"></i></a></li>
-                                {% endif %}
-								<li>
-									<span class="page-numbers">صفحه {{ page_obj.number }} از {{ page_obj.paginator.num_pages }}</span>
-								</li>
-							</ul>
-						</div><!-- Paging end -->
+                            {% if page_obj.has_next %}
+                                <li><a href="?page={{ page_obj.next_page_number }}">بعدی <i
+                                        class="fa fa-angle-left"></i></a></li>
+                            {% endif %}
+                            <li>
+                                <span class="page-numbers">صفحه {{ page_obj.number }} از {{ page_obj.paginator.num_pages }}</span>
+                            </li>
+                        </ul>
+                    </div><!-- Paging end -->
 
 
-					</div><!-- Content Col end -->
+                </div><!-- Content Col end -->
 
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="sidebar sidebar-right">
-                            <div class="gap-40"></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sidebar sidebar-right">
+                        <div class="gap-40"></div>
 
-							<div class="widget m-bottom-0">
-								<h3 class="block-title"><span>خبرنامه</span></h3>
-								<div class="ts-newsletter">
-									<div class="newsletter-introtext">
-										<h4>به روز باشید</h4>
-										<p>با عضویت در خبرنامه جدیدترین اخبار را در ایمیل خود دریافت کنید!</p>
-									</div>
+                        <div class="widget m-bottom-0">
+                            <h3 class="block-title"><span>خبرنامه</span></h3>
+                            <div class="ts-newsletter">
+                                <div class="newsletter-introtext">
+                                    <h4>به روز باشید</h4>
+                                    <p>با عضویت در خبرنامه جدیدترین اخبار را در ایمیل خود دریافت کنید!</p>
+                                </div>
 
-									<div class="newsletter-form">
-										<form action="#" method="post">
-											<div class="form-group">
-												<input type="email" name="email" id="newsletter-form-email" class="form-control form-control-lg" placeholder="ایمیل" autocomplete="off">
-												<button class="btn btn-primary">عضویت</button>
-											</div>
-										</form>
-									</div>
-								</div><!-- Newsletter end -->
-							</div><!-- Newsletter widget end -->
+                                <div class="newsletter-form">
+                                    <form action="#" method="post">
+                                        <div class="form-group">
+                                            <input type="email" name="email" id="newsletter-form-email"
+                                                   class="form-control form-control-lg" placeholder="ایمیل"
+                                                   autocomplete="off">
+                                            <button class="btn btn-primary">عضویت</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div><!-- Newsletter end -->
+                        </div><!-- Newsletter widget end -->
 
-						</div><!-- Sidebar right end -->
-					</div><!-- Sidebar Col end -->
+                    </div><!-- Sidebar right end -->
+                </div><!-- Sidebar Col end -->
 
-				</div><!-- Row end -->
-			</div><!-- Container end -->
-		</section><!-- First block end -->
+            </div><!-- Row end -->
+        </div><!-- Container end -->
+    </section><!-- First block end -->
 {% endblock %}

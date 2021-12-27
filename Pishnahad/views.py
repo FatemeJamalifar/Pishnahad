@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 
-from Blog.models import Post,Category
+from Blog.models import Post, Category
+
 
 def home_page(request):
     post = Post.objects.get_active_post().order_by("created")
 
-    three_new_post = post[post.count()-4:post.count()]
+    three_new_post = post[post.count() - 4:post.count()]
 
     cats = Category.objects.all()
 
@@ -14,16 +15,16 @@ def home_page(request):
 
     for i in cats:
         post_order_by_cats[i] = post.filter(category__title=i.title).all()
-        print(i," ",post.filter(category__title=i.title).all())
-
+        print(i, " ", post.filter(category__title=i.title).all())
 
     context = {
-        "posts":post,
-        "three_new_post":three_new_post,
-        "cats":cats,
-        "post_order_by_cats":post_order_by_cats,
+        "posts": post,
+        "three_new_post": three_new_post,
+        "cats": cats,
+        "post_order_by_cats": post_order_by_cats,
     }
-    return render(request,"home_page.html",context)
+    return render(request, "home_page.html", context)
+
 
 class SearchPostsView(ListView):
     template_name = 'all_post.html'
