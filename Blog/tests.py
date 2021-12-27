@@ -3,7 +3,7 @@ from django.test import Client
 
 from Blog.models import Post
 
-class SeleniumTests(unittest.TestCase):
+class Tests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -15,6 +15,8 @@ class SeleniumTests(unittest.TestCase):
             print("home page loaded ok ...")
             print("blog page loaded ok ...")
             self.assertTrue(True,"home page loaded ok ...\nblog page loaded ok ...")
+        else:
+            self.assertTrue(False)
 
 
 

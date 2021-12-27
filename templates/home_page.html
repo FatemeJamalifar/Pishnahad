@@ -21,7 +21,7 @@
                                         <div class="post-content">
                                             <a class="post-cat" href="#">{{ post.category.title }}</a>
                                             <h2 class="post-title title-extra-large">
-                                                <a href="#">{{ post.title }}</a>
+                                                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                                             </h2>
                                             <span class="post-date">{{ post.created }}</span>
                                         </div>
@@ -54,7 +54,7 @@
                                             <li class="clearfix">
                                                 <div class="post-block-style clearfix">
                                                     <div class="post-thumb">
-                                                        <a href="#"><img class="img-responsive"
+                                                        <a href="{{ latest.get_absolute_url }}"><img class="img-responsive"
                                                                          src="{{ latest.image.url }}" alt=""></a>
                                                     </div>
                                                     <a class="post-cat" href="#">{{ latest.category.title }}</a>
@@ -89,7 +89,7 @@
                                                 <li class="clearfix">
                                                     <div class="post-block-style clearfix">
                                                         <div class="post-thumb">
-                                                            <a href="#"><img class="img-responsive"
+                                                            <a href="{{ item.get_absolute_url }}"><img class="img-responsive"
                                                                              src="{{ item.image.url }}" alt=""></a>
                                                         </div>
                                                         <a class="post-cat" href="#">{{ item.category.title }}</a>
