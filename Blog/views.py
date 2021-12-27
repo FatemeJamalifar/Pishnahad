@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import Post, PostModule, Category
+from .models import Post, PostModule
 
 
 def details_post(request, id):

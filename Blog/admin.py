@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Post, Category, PostModule  # ,AdvantagesModule,DisadvantagesModule
+from .models import Post, Category, PostModule
 
 
 class ModuleInline(admin.StackedInline):

@@ -15,7 +15,7 @@ def home_page(request):
 
     for i in cats:
         post_order_by_cats[i] = post.filter(category__title=i.title).all()
-        print(i, " ", post.filter(category__title=i.title).all())
+        #print(i, " ", post.filter(category__title=i.title).all())
 
     context = {
         "posts": post,

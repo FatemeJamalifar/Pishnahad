@@ -1,11 +1,5 @@
-from django.test import TestCase
-
 import unittest
-
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import os
-import time
+from django.test import Client
 
 from Blog.models import Post
 
@@ -13,20 +7,21 @@ class SeleniumTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        ### set config for selenium
         super().setUpClass()
-        cls.path = os.path.dirname(os.path.abspath(__file__))
-        cls.address = os.path.join(cls.path, "chromedriver")
-        cls.driver = webdriver.Chrome(executable_path=cls.address)
-        cls.driver.delete_all_cookies()
-        cls.driver.get('http://127.0.0.1:8000/login/')
         cls.posts = Post.objects.all()
 
-    @classmethod
-    def tearDownClass(cls):
-        ### distroying
-        cls.driver.quit()
-        super().tearDownClass()
+    def test_home_and_blog_page(self):
+        if Client().get("http://127.0.0.1:8000").status_code == 200 and Client().get("http://127.0.0.1:8000/blog").status_code == 200:
+            print("home page loaded ok ...")
+            print("blog page loaded ok ...")
+            self.assertTrue(True,"home page loaded ok ...\nblog page loaded ok ...")
 
-    def test_course_created(self):
-        self.driver.
+
+
+    def test_post_created(self):
+        for post in self.posts:
+            if Client().get(post.get_absolute_url()).status_code == 200:
+                print(f"{post.title} is available\n")
+            else:
+                self.assertTrue(False)
+        self.assertTrue(True)
