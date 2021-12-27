@@ -19,11 +19,12 @@ from django.urls import path , include
 
 from Pishnahad import settings
 
-from .views import home_page
+from .views import home_page, SearchPostsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home_page),
+    path('search/',SearchPostsView.as_view()),
     path('blog/',include("Blog.urls"))
 ]
 

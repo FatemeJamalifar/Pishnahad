@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 import os
+from django.db.models import Q
 
 
 def get_filename_ext(filepath):
@@ -34,6 +35,10 @@ class PostManager(models.Manager):
     def get_post_by_id(self,post_id):
         return self.get_queryset().filter(id=post_id)
 
+    def search(self, query):
+        lookup = Q(title__icontains=query) | Q(overview__icontains=query) | Q(category__title__icontains=query)
+        return self.get_queryset().filter(lookup, active=True, ).distinct()
+
 class Post(models.Model):
     auth = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -47,7 +52,18 @@ class Post(models.Model):
     objects = PostManager()
 
     def get_absolute_url(self):
-        return f"/blog/details/{self.id}/{self.slug}"
+        return f"/blog/{self.id}"
 
     def __str__(self):
         return self.title
+
+
+class PostModule(models.Model):
+    post = models.ForeignKey(Post, related_name='modules', on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to=upload_image_path, null=True)
+    url_price = models.URLField()
+    advantages = models.TextField(null=True)
+    disadvantages = models.TextField(null=True)
+    info = models.TextField(null=True)
+
